@@ -22,10 +22,10 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   inputs:
-    Contents: '**/.war'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    Contents: '**/.Dockerfile'
+    TargetFolder: '$(build.artifactstagingdirectory)/Dockerfile'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Dockerfile'
     ArtifactName: 'warfile'
     publishLocation: 'Container'
